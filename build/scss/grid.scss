@@ -1,0 +1,51 @@
+.r {
+  @include clearfix;
+}
+
+.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 {
+  box-sizing: border-box;
+  float: left;
+  margin-top: 1em;
+  padding: 0 1em;
+
+  .r &:first-child {
+    padding-left: 0;
+  }
+  .r &:last-child {
+    padding-right: 0;
+  }
+}
+
+@mixin cols($suffix: '') {
+  @for $i from 1 through 12 {
+    .c#{$i}#{$suffix} {
+      width: $i / 12 * 100%;
+    }
+  }
+  .r .c12#{$suffix} {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@include cols;
+
+.no {
+  display: none !important;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  @include cols(m);
+
+  .nom {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  @include cols(s);
+
+  .nos {
+    display: none !important;
+  }
+}

@@ -1,0 +1,22 @@
+.crumbs {
+  a:hover {
+    background: none;
+  }
+  li {
+    &::after {
+      content: '/';
+      color: Gainsboro;
+    }
+    &:last-child {
+      &::after {
+        content: none;
+      }
+      a {
+        color: $body;
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+}

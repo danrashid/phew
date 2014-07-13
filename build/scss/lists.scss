@@ -1,0 +1,106 @@
+/* Lists */
+
+nav ul,
+.dropdown + ul,
+.toolbar,
+.tabs,
+.inline,
+.listless {
+  list-style: none;
+  padding: 0;
+}
+.toolbar,
+.tabs {
+  display: inline-block;
+  .vertical & {
+    display: block;
+  }
+}
+header ul {
+  margin-top: 0;
+}
+
+/* List items */
+
+nav ul,
+.toolbar,
+.tabs,
+.inline {
+  @include clearfix;
+
+  li {
+    float: left;
+  }
+}
+.vertical,
+.dropdown + ul {
+  li {
+    float: none;
+  }
+}
+.inline > li {
+  padding: $pad;
+
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+/* List links */
+
+nav,
+.toolbar,
+.tabs,
+.dropdown + ul {
+  a {
+    display: inline-block;
+    padding: $pad;
+
+    &:hover {
+      background: lighten($active, 15%);
+    }
+    &.active {
+      background: $active;
+      color: White;
+      cursor: default;
+    }
+  }
+}
+.vertical,
+.dropdown + ul {
+  a {
+    display: block;
+  }
+}
+
+/* Borders */
+
+.toolbar,
+.tabs,
+.dropdown + ul {
+  border-radius: $radius;
+  border-width: 1px;
+  &, li {
+    border-style: solid;
+    border-color: $stroke;
+  }
+  li {
+    border-width: 0 0 0 1px;
+    &:first-child {
+      border: none;
+    }
+  }
+}
+.vertical .toolbar,
+.vertical .tabs,
+.dropdown + ul {
+  li {
+    border-width: 1px 0 0;
+    &:first-child {
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.switches {
+  label {
+    position: relative;
+    padding-left: 2.25em;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 1em;
+      border-radius: 1em;
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: .125em;
+    }
+    &::before {
+      width: 1.75em;
+      border: 1px solid $stroke;
+      margin-right: .5em;
+    }
+    &::after {
+      background: $active;
+      width: 1em;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked {
+      + label::after {
+        background: $button;
+        left: .75em;
+      }
+    }
+  }
+}

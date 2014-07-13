@@ -1,0 +1,19 @@
+.expand {
+  display: block;
+  &::after {
+    content: '▸';
+    margin-left: .25em;
+  }
+  + * {
+    display: none;
+  }
+  &.open {
+    &::after {
+      content: '▾';
+    }
+    + * {
+      display: block;
+      @include fade('in');
+    }
+  }
+}

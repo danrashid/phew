@@ -1,0 +1,37 @@
+.dropdown {
+  &.button::after {
+    margin-left: .375em;
+    content: '▾';
+  }
+
+  + * {
+    background: White;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    margin-top: 1em;
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      left: 50%;
+    }
+    &::before {
+      @include up(12px, $stroke);
+      top: -12px;
+      margin-left: -12px;
+    }
+    &::after {
+      @include up(10px, White);
+      top: -10px;
+      margin-left: -10px;
+    }
+  }
+  &.open + * {
+    display: block;
+  }
+  + div {
+    border: 1px solid $stroke;
+    border-radius: $radius;
+    padding: $pad;
+  }
+}

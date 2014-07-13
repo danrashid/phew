@@ -1,0 +1,62 @@
+label {
+  cursor: pointer;
+  fieldset & {
+    display: block;
+  }
+}
+
+form .error {
+  visibility: hidden;
+  background: $alert;
+  color: White;
+  font-size: .875em;
+  line-height: $line-height;
+  padding: .125em .5em;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+fieldset,
+select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: .25em;
+  border: 1px solid $stroke;
+  border-radius: $radius;
+
+  &.invalid {
+    border-radius: $radius $radius 0 0;
+    + .error {
+      border-radius: 0 0 $radius $radius;
+      @include fade('in');
+    }
+  }
+}
+
+input:not([type=checkbox]):not([type=radio]),
+select {
+  height: 2em;
+}
+
+fieldset {
+  position: relative;
+  margin: $line-height 0 0;
+  padding: .5em;
+}
+
+legend {
+  position: absolute;
+  top: -$line-height;
+  left: 0;
+  margin-top: -2px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin-right: .5em;
+}
+
+textarea {
+  height: 5em;
+}

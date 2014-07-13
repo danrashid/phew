@@ -1,0 +1,43 @@
+html, body, #overlay {
+  height: 100%;
+}
+
+#overlay, .modal {
+  position: fixed;
+  visibility: hidden;
+
+  &.fade-in {
+    @include fade(in);
+  }
+  &.fade-out {
+    @include fade(out);
+  }
+}
+
+#overlay {
+  width: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, .6);
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  max-width: 75%;
+  z-index: 2;
+  background: White;
+  padding: 1em;
+  border-radius: $radius;
+
+  .close {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: $disabled;
+    position: absolute;
+    top: .5em;
+    right: .75em;
+    &:hover {
+      color: darken($disabled, 20%);
+    }
+  }
+}
