@@ -1,7 +1,7 @@
 phew
 ====
 
-A handful of little UI things
+[A handful of little UI things](http://danrashid.github.io/phew/)
 
 Building
 --------
