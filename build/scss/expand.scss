@@ -1,19 +1,22 @@
 .expand {
-  display: block;
   &::after {
     content: '▸';
     margin-left: .25em;
   }
   + * {
-    display: none;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
   }
   &.open {
     &::after {
       content: '▾';
     }
     + * {
-      display: block;
-      @include fade('in');
+      position: relative;
+      visibility: visible;
     }
   }
 }

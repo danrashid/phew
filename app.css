@@ -199,22 +199,20 @@ a.button {
   border-radius: 0.25em;
   padding: 0.5em 0.75em; }
 
-.expand {
-  display: block; }
-  .expand::after {
-    content: '▸';
-    margin-left: .25em; }
-  .expand + * {
-    display: none; }
-  .expand.open::after {
-    content: '▾'; }
-  .expand.open + * {
-    display: block;
-    visibility: visible;
-    -webkit-animation: fade-in 0.5s;
-    animation: fade-in 0.5s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards; }
+.expand::after {
+  content: '▸';
+  margin-left: .25em; }
+.expand + * {
+  -webkit-transition: height .5s;
+  transition: height .5s;
+  position: absolute;
+  visibility: hidden;
+  overflow: hidden; }
+.expand.open::after {
+  content: '▾'; }
+.expand.open + * {
+  position: relative;
+  visibility: visible; }
 
 label {
   cursor: pointer; }
