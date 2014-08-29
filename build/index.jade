@@ -49,6 +49,8 @@ body
           a(href="#clickies") Buttons, etc.
         li
           a(href="#forms") Forms
+        li
+          a(href="#accordion") Accordion
 
     section.c9.c12s
       ul.tabs.nos
@@ -62,6 +64,8 @@ body
           a(href="#clickies") Buttons, etc.
         li
           a(href="#forms") Forms
+        li
+          a(href="#accordion") Accordion
 
       div(data-tab="phil")
         h1
@@ -263,6 +267,17 @@ body
               button(type="submit") Submit
             .c6.right
               button.alert Delete
+
+      div(data-tab="accordion")
+        h1 Accordion
+
+        dl.accordion
+          dt Foo
+          dd This is the Foo content
+          dt Bar
+          dd This is the Bar content
+          dt Baz
+          dd This is the Baz content
 
   .modal#modal1
     a.close(href="#") ×

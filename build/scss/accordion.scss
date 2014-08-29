@@ -1,0 +1,32 @@
+.accordion {
+  border-radius: $radius;
+  border: 1px solid $stroke;
+
+  &, & > dt {
+    border: 1px solid $stroke;
+  }
+  &, & > dd {
+    margin: 0;
+  }
+  > {
+    dt, dd {
+      padding: $pad;
+    }
+  }
+  > dt {
+    cursor: pointer;
+    border-width: 1px 0 0;
+
+    &:first-child {
+      border: none;
+    }
+    &:hover {
+      background: lighten($active, 15%);
+    }
+    &.open {
+      background: $active;
+      color: White;
+      cursor: default;
+    }
+  }
+}

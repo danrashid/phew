@@ -4,7 +4,7 @@ body, input, textarea {
   color: $body;
 }
 
-a {
+a, .accordion > dt {
   text-decoration: none;
   color: $link;
 

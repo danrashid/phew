@@ -40,12 +40,12 @@ body, input, textarea {
   line-height: 1.375em;
   color: #222222; }
 
-a {
+a, .accordion > dt {
   text-decoration: none;
   color: royalblue; }
-  a:visited {
+  a:visited, .accordion > dt:visited {
     color: purple; }
-  a:hover {
+  a:hover, .accordion > dt:hover {
     /* TODO */
     color: #273F87; }
 
@@ -89,6 +89,27 @@ h6 {
 
 .dim {
   color: silver; }
+
+.accordion {
+  border-radius: 0.25em;
+  border: 1px solid gainsboro; }
+  .accordion, .accordion > dt {
+    border: 1px solid gainsboro; }
+  .accordion, .accordion > dd {
+    margin: 0; }
+  .accordion > dt, .accordion > dd {
+    padding: 0.5em 0.75em; }
+  .accordion > dt {
+    cursor: pointer;
+    border-width: 1px 0 0; }
+    .accordion > dt:first-child {
+      border: none; }
+    .accordion > dt:hover {
+      background: #e6ecf5; }
+    .accordion > dt.open {
+      background: lightsteelblue;
+      color: White;
+      cursor: default; }
 
 a.button {
   display: inline-block; }
@@ -199,18 +220,18 @@ a.button {
   border-radius: 0.25em;
   padding: 0.5em 0.75em; }
 
-.expand::after {
+.expand::after, .accordion > dt::after {
   content: '▸';
-  margin-left: .25em; }
-.expand + * {
-  -webkit-transition: height .5s;
-  transition: height .5s;
+  padding-left: .25em; }
+.expand + *, .accordion > dt + * {
+  -webkit-transition: height .5s, padding .5s;
+  transition: height .5s, padding .5s;
   position: absolute;
   visibility: hidden;
   overflow: hidden; }
-.expand.open::after {
+.expand.open::after, .accordion > dt.open::after {
   content: '▾'; }
-.expand.open + * {
+.expand.open + *, .accordion > dt.open + * {
   position: relative;
   visibility: visible; }
 

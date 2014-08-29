@@ -1,11 +1,11 @@
-.expand {
+.expand, .accordion > dt {
   &::after {
     content: '▸';
-    margin-left: .25em;
+    padding-left: .25em;
   }
   + * {
-    -webkit-transition: height .5s;
-    transition: height .5s;
+    -webkit-transition: height .5s, padding .5s;
+    transition: height .5s, padding .5s;
     position: absolute;
     visibility: hidden;
     overflow: hidden;
