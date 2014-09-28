@@ -33,7 +33,6 @@ $(function() {
       }, duration);
     } else {
       $this.addClass('open');
-      close($this.siblings('dt'));
       $target
         .height(targetHeight)
         .css({

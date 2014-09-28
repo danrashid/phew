@@ -14,16 +14,15 @@
       position: absolute;
       content: '';
       left: 50%;
+      top: -1em;
+      margin-left: -1em;
     }
     &::before {
-      @include up(12px, $stroke);
-      top: -12px;
-      margin-left: -12px;
+      @include up(1em, $stroke);
     }
     &::after {
-      @include up(10px, White);
-      top: -10px;
-      margin-left: -10px;
+      @include up(1em, White);
+      margin-top: 1px;
     }
   }
   &.open + * {

@@ -108,8 +108,7 @@ h6 {
       background: #e6ecf5; }
     .accordion > dt.open {
       background: lightsteelblue;
-      color: White;
-      cursor: default; }
+      color: White; }
 
 a.button {
   display: inline-block; }
@@ -196,23 +195,22 @@ a.button {
   .dropdown + *::before, .dropdown + *::after {
     position: absolute;
     content: '';
-    left: 50%; }
+    left: 50%;
+    top: -1em;
+    margin-left: -1em; }
   .dropdown + *::before {
     width: 0;
     height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid gainsboro;
-    top: -12px;
-    margin-left: -12px; }
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-bottom: 1em solid gainsboro; }
   .dropdown + *::after {
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid white;
-    top: -10px;
-    margin-left: -10px; }
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-bottom: 1em solid white;
+    margin-top: 1px; }
 .dropdown.open + * {
   display: block; }
 .dropdown + div {
