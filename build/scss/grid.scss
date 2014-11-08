@@ -1,28 +1,28 @@
-.r {
+.row {
   @include clearfix;
 }
 
-.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 {
+.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
   box-sizing: border-box;
   float: left;
   margin-top: 1em;
   padding: 0 1em;
 
-  .r &:first-child {
+  .row &:first-child {
     padding-left: 0;
   }
-  .r &:last-child {
+  .row &:last-child {
     padding-right: 0;
   }
 }
 
-@mixin cols($suffix: '') {
+@mixin cols($prefix: '') {
   @for $i from 1 through 12 {
-    .c#{$i}#{$suffix} {
+    .#{$prefix}col#{$i} {
       width: $i / 12 * 100%;
     }
   }
-  .r .c12#{$suffix} {
+  .row .#{$prefix}col12 {
     padding-left: 0;
     padding-right: 0;
   }
@@ -30,22 +30,38 @@
 
 @include cols;
 
-.no {
+.hide {
   display: none !important;
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
-  @include cols(m);
+.show,
+.small-hide,
+.medium-hide {
+  display: block !important;
+}
 
-  .nom {
+@media (min-width: 768px) and (max-width: 1279px) {
+  @include cols(medium-);
+
+  .medium-hide,
+  .small-show {
     display: none !important;
+  }
+  .medium-show,
+  .small-hide {
+    display: block !important;
   }
 }
 
 @media (max-width: 767px) {
-  @include cols(s);
+  @include cols(small-);
 
-  .nos {
+  .small-hide,
+  .medium-show {
     display: none !important;
+  }
+  .small-show,
+  .medium-hide {
+    display: block !important;
   }
 }
