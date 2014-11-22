@@ -1,7 +1,7 @@
 phew
 ====
 
-A handful of little UI things
+A hastily-coded front-end framework with just the stuff I want
 
 [View the Demo](http://danrashid.github.io/phew/)
 
