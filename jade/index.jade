@@ -1,0 +1,93 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title phew
+    link(rel="stylesheet" type="text/css" href="css/normalize.css")
+    link(rel="stylesheet" type="text/css" href="css/app.css")
+    script(type="text/javascript" src="js/jquery-2.1.1.js")
+    script(type="text/javascript" src="js/accordion.js")
+    script(type="text/javascript" src="js/disabled.js")
+    script(type="text/javascript" src="js/form.js")
+    script(type="text/javascript" src="js/menu.js")
+    script(type="text/javascript" src="js/modal.js")
+    script(type="text/javascript" src="js/tabs.js")
+    script(type="text/javascript" src="js/tooltip.js")
+
+  mixin nav-items
+    li
+      a(href="#accordion") Accordion
+    li
+      a(href="#breadcrumbs") Breadcrumbs
+    li
+      a(href="#buttons") Buttons
+    li
+      a(href="#form") Form
+    li
+      a(href="#grid") Grid
+    li
+      a(href="#messages") Messages
+    li
+      a(href="#modal") Modal
+    li
+      a(href="#spinner") Spinner
+    li
+      a(href="#inline-tabs") Inline tabs
+    li
+      a(href="#tooltip") Tooltip
+    li
+      a(href="#type") Type
+
+  body
+    .row
+      .col-2.medium-3.small-4
+        ul.tabs
+          +nav-items
+      .col-10.medium-9.small-8
+        .tab-content#accordion
+          h1 Accordion
+          include accordion
+
+        .tab-content#breadcrumbs
+          h1 Breadcrumbs
+          include breadcrumbs
+
+        .tab-content#buttons
+          h1 Buttons
+          include buttons
+
+        .tab-content#form
+          h1 Form
+          include form
+
+        .tab-content#grid
+          h1 Grid
+          include grid
+
+        .tab-content#inline-tabs
+          h1 Inline tabs
+          .message Same as default (vertical) tabs as used on the left,
+            | but with <code>.inline</code> class added.
+          ul.tabs.inline
+            +nav-items
+
+        .tab-content#messages
+          h1 Messages
+          include messages
+
+        .tab-content#modal
+          h1 Modal
+          include modal
+
+        .tab-content#spinner
+          h1 Spinner
+          include spinner
+
+        .tab-content#tooltip
+          h1 Tooltip
+          include tooltip
+
+        .tab-content#type
+          h1 Type
+          include type

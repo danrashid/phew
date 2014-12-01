@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-jade -w build/index.jade -o . &
-sass --watch build/scss/_app.scss:app.css
+jade -w jade/ -o html/ -P &
+sass --watch scss/app.scss:css/app.css --sourcemap=none
 wait

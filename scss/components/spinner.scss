@@ -1,0 +1,39 @@
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading {
+  min-height: 2rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: -1.125rem 0 0 -1.125rem;
+    border: .375rem solid transparent;
+    border-radius: 100%;
+    border-top-color: $symbol-color;
+    -webkit-animation: spin 1.25s infinite linear;
+    animation: spin 1.25s infinite linear;
+  }
+}
+
+button, .button {
+  &.loading {
+    min-height: 0;
+
+    &::before {
+      border-top-color: rgba(255, 255, 255, .375);
+    }
+  }
+}

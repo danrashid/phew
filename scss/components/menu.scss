@@ -1,0 +1,55 @@
+.menu {
+  position: relative;
+
+  > a {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: '▾';
+      margin-left: .75em;
+    }
+  }
+
+  &.open {
+    > a {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    ul {
+      display: block;
+    }
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    @include unlist;
+    background: $bg;
+    border: $stroke;
+    border-radius: 0 $radius $radius $radius;
+    margin-top: -1px;
+
+    a {
+      display: block;
+      padding: $padding;
+      text-decoration: none;
+      transition: background .25s;
+      white-space: nowrap;
+
+      &:hover {
+        background: $menu-hover-color;
+      }
+    }
+
+    li:not(:first-child) {
+      border-top: $stroke;
+    }
+  }
+
+  &.right ul {
+    right: 0;
+    border-radius: $radius 0 $radius $radius;
+  }
+}

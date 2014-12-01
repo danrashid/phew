@@ -1,0 +1,43 @@
+.message {
+  background: $primary-message-bg;
+  border: $stroke;
+  border-color: $primary-color;
+  border-radius: $radius;
+  margin: 1rem 0;
+  padding: $padding;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  &, & a {
+    color: $primary-message-color;
+  }
+
+  &.success {
+    background: $success-message-bg;
+    border-color: $success-color;
+
+    &, & a {
+      color: $success-message-color;
+    }
+  }
+
+  &.caution {
+    background: $caution-message-bg;
+    border-color: $caution-color;
+
+    &, & a {
+      color: $caution-message-color;
+    }
+  }
+
+  &.alert {
+    background: $alert-message-bg;
+    border-color: $alert-color;
+
+    &, & a {
+      color: $alert-message-color;
+    }
+  }
+}

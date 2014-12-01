@@ -1,0 +1,45 @@
+@mixin grid($prefix) {
+  @for $i from 1 through 12 {
+    .#{$prefix}-#{$i} {
+      width: percentage($i / 12);
+    }
+  }
+}
+
+@mixin toggle($prefix: '') {
+  .#{$prefix}show {
+    display: block !important;
+  }
+  .#{$prefix}hide {
+    display: none !important;
+  }
+}
+
+.row {
+  @include clearfix;
+  margin: 1rem 0;
+
+  .row {
+    margin: 1rem -1rem;
+  }
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 1rem;
+}
+
+@include grid(col);
+@include toggle;
+
+@media (max-width: 768px) {
+  @include grid(small);
+  @include toggle(small-);
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  @include grid(medium);
+  @include toggle(medium-);
+}

@@ -1,0 +1,65 @@
+button,
+.button,
+.menu > a {
+  border: none;
+  border-radius: $radius;
+  color: $bg;
+  display: inline-block;
+  padding: $padding;
+  text-decoration: none;
+  transition: background .25s;
+
+  &, &.loading, &.loading:hover {
+    background: $primary-color;
+  }
+
+  &:hover {
+    background: $primary-hover-color;
+  }
+
+  &.secondary {
+    background: $secondary-color;
+    color: $color;
+
+    &:hover {
+      background: $secondary-hover-color;
+    }
+  }
+
+  &.success {
+    background: $success-color;
+
+    &:hover {
+      background: $success-hover-color;
+    }
+  }
+
+  &.caution {
+    background: $caution-color;
+
+    &:hover {
+      background: $caution-hover-color;
+    }
+  }
+
+  &.alert {
+    background: $alert-color;
+
+    &:hover {
+      background: $alert-hover-color;
+    }
+  }
+
+  &[disabled], &.disabled {
+    color: darken($disabled-color, 20%);
+
+    &, &:hover {
+      background: $disabled-color;
+    }
+  }
+
+  &.disabled,
+  &.loading {
+    cursor: default;
+  }
+}

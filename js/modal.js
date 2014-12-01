@@ -1,51 +1,41 @@
-$(function() {
+/* global $ */
+'use strict';
 
-  function fadeOut() {
-    var $els =  $overlay.add('.modal');
+$(function () {
+  var $modalScreen = $('<div id="modal-screen">').appendTo('body');
 
-    $els
-      .removeClass('fade-in')
-      .addClass('fade-out');
-
-    if (isIe9) {
-      $els.css('visibility', 'hidden');
-    }
-
-    return false;
+  function closeModal() {
+    $('.modal').fadeOut(250, function () {
+      $(this).removeClass('open');
+    });
+    $modalScreen.fadeOut(250);
   }
 
-  var isIe9 = $('html').hasClass('ie9'),
-    $overlay = $('<div id="overlay">')
-      .prependTo('body')
-      .on('click', fadeOut),
-    overlayWidth = $overlay.width(),
-    overlayHeight = $overlay.height();
-
   $(document)
-    .on('click', '[data-modal]', function () {
-      var modalId = $(this).data('modal'),
-        $modal = $('#' + modalId),
-        $els = $overlay.add($modal);
+    .on('click', function (e) {
+      var $target = $(e.target),
+        clickedClose = $target.is('.close, .cancel');
 
-      $modal.css({
-        top: (overlayHeight - $modal.height()) / 2,
-        left: (overlayWidth - $modal.width()) / 2
-      });
+      if ($target.is('[data-modal-id]')) {
+        $('#' + $target.data('modalId'))
+          .fadeIn(250, function () {
+            $(this).addClass('open');
+          });
 
-      $els
-        .removeClass('fade-out')
-        .addClass('fade-in');
-
-      if (isIe9) {
-        $els.css('visibility', 'visible');
+        $modalScreen.fadeIn(250);
+        return false;
       }
 
-      return false;
+      if ($target.closest('.modal').length > 0 && !clickedClose) {
+        return true;
+      }
+
+      closeModal();
+      return !clickedClose;
     })
-    .on('click', '.modal .close', fadeOut)
     .on('keyup', function (e) {
-      if (e.which === 27 && $overlay.hasClass('fade-in')) { // Escape key
-        fadeOut();
+      if (e.keyCode === 27) { // Escape
+        closeModal();
       }
     });
 });

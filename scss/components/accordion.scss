@@ -1,0 +1,51 @@
+.accordion {
+  dt a, dd {
+    padding: $padding;
+  }
+
+  dt, dd {
+    border: $stroke;
+  }
+
+  dt {
+    border-radius: $radius;
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        background: $menu-hover-color;
+      }
+
+      &::after {
+        content: '▸';
+        margin-left: .5em;
+      }
+    }
+
+    &.open {
+      border-bottom-color: $menu-hover-color;
+      border-radius: $radius $radius 0 0;
+
+      a::after {
+        content: '▾';
+      }
+
+      + dd {
+        display: block;
+      }
+    }
+  }
+
+  dd {
+    margin: 0;
+    display: none;
+    border-top: none;
+    border-radius: 0 0 $radius $radius;
+  }
+}

@@ -1,0 +1,21 @@
+.inline,
+.breadcrumbs,
+.button-group {
+  @include unlist;
+  @include clearfix;
+
+  > li {
+    float: left;
+  }
+}
+
+.inline > li {
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
+
+  &.right {
+    float: right;
+    margin-right: 0;
+  }
+}

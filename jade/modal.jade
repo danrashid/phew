@@ -1,0 +1,18 @@
+.message <code>a[data-modal-id]</code> and <code>.modal[id]</code> need to match.
+  | It doesn’t matter where the elements are placed in the document.
+
+p
+  a(href="#" data-modal-id="the-modal") Opens a modal
+
+.modal#the-modal
+  h2.right
+    a(href="#").close ×
+  h2 The modal title
+
+  p Are you sure you want to do something bad?
+
+  ul.inline
+    li.right
+      a(href="#").cancel Cancel
+    li
+      button.alert Do it

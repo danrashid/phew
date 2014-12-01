@@ -1,0 +1,55 @@
+.modal,
+#modal-screen {
+  display: none;
+  position: fixed;
+}
+
+.modal {
+  background: $bg;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  left: 50%;
+  top: 25%;
+  margin-left: -25%;
+  padding: .25rem 1.5rem 1.5rem;
+  width: 50%;
+  z-index: 2;
+
+  &.open {
+    display: block;
+  }
+
+  .close {
+    color: $secondary-color;
+    float: right;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary-hover-color;
+    }
+  }
+
+  .cancel {
+    display: inline-block;
+    margin: .75rem 0 .75rem .75rem;
+  }
+}
+
+html,
+body,
+#modal-screen {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+#modal-screen {
+  background: rgba(0, 0, 0, .625);
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}

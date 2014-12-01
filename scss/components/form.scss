@@ -1,0 +1,33 @@
+input,
+select {
+  border: $stroke;
+  border-radius: $radius;
+  box-sizing: border-box;
+  height: 2em;
+  padding: $input-padding;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.required {
+  color: $alert-color;
+  display: inline;
+  font-size: $error-font-size;
+  line-height: normal;
+}
+
+.error {
+  opacity: 0;
+  background: $alert-color;
+  border-radius: 0 0 $radius $radius;
+  color: $bg;
+  font-size: $error-font-size;
+  margin-top: -$radius;
+  padding: .25em $input-padding .125em;
+  transition: opacity .25s;
+}
+
+.invalid + .error {
+  opacity: 1;
+}

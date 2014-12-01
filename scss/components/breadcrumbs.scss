@@ -1,0 +1,15 @@
+.breadcrumbs {
+  li:not(:last-child) {
+    margin-right: .5em;
+
+    &::after {
+      content: '▸';
+      color: $symbol-color;
+      margin-left: .5em;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,38 @@
+.tooltip {
+  background: $bg;
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  width: 20em;
+  border: $stroke;
+  border-radius: $radius;
+  margin: 1rem 0 0 -10em;
+  padding: $padding;
+
+  &.open {
+    display: block;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -1rem;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 1rem 1rem;
+  }
+
+  &::before {
+    border-bottom-color: darken($stroke-color, 10%);
+  }
+
+  &::after {
+    border-bottom-color: $bg;
+    margin-top: 1px;
+  }
+}

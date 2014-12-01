@@ -1,27 +1,25 @@
-$(function() {
+/* global $ */
+'use strict';
 
-  var $tabs = $('.tabs a'),
-    $panels;
+$(function () {
+  var $tabLinks = $('.tabs a'),
+    $tabPanels = $('.tab-content');
 
-  function show(hash) {
-    $tabs
-      .removeClass('active')
-      .filter('[href="' + hash + '"]')
+  function toggleTab() {
+    var hash = window.location.hash.length > 1 ?
+      window.location.hash :
+      $tabLinks.first().attr('href');
+
+    $tabLinks.removeClass('active')
+      .filter('[href=' + hash + ']')
         .addClass('active');
 
-    $panels
-      .hide()
-      .filter('[data-tab="' + hash.slice('1') + '"]').show();
+    $tabPanels.hide()
+      .filter(hash)
+        .fadeIn();
   }
 
-  $tabs.on('click', function () {
-    show($(this).attr('href'));
-  });
+  $(window).on('hashchange', toggleTab);
 
-  if ($tabs.length > 0) {
-    var hash = window.location.hash || $tabs.parents('li:first-child').find('a').attr('href');
-
-    $panels = $('[data-tab]');
-    show(hash);
-  }
+  toggleTab();
 });

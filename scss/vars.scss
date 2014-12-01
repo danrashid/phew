@@ -1,0 +1,51 @@
+/* Body defaults */
+
+$bg: White;
+$font: 1em/1.4em Sans-serif;
+$color: #4d4d4d;
+$bold-weight: normal;
+$bold-color: Black;
+
+/* Shapes */
+
+$padding: .5em .75em;
+$radius: .125rem;
+$stroke-color: Gainsboro;
+$stroke: 1px solid $stroke-color;
+
+/* Forms */
+
+$error-font-size: .8125em;
+$input-padding: .375rem;
+
+/* Colors */
+
+$symbol-color: Silver;
+$menu-hover-color: WhiteSmoke;
+
+/* -- Buttons */
+
+$primary-color: CornflowerBlue;
+$secondary-color: $stroke-color;
+$success-color: LimeGreen;
+$caution-color: DarkOrange;
+$alert-color: Crimson;
+$disabled-color: $symbol-color;
+
+$primary-hover-color: darken($primary-color, 15%);
+$secondary-hover-color: darken($secondary-color, 15%);
+$success-hover-color: darken($success-color, 10%);
+$caution-hover-color: darken($caution-color, 7.5%);
+$alert-hover-color: darken($alert-color, 10%);
+
+/* -- Messages */
+
+$primary-message-bg: lighten($primary-color, 30%);
+$success-message-bg: lighten($success-color, 45%);
+$caution-message-bg: lighten($caution-color, 45%);
+$alert-message-bg: lighten($alert-color, 50%);
+
+$primary-message-color: darken($primary-color, 35%);
+$success-message-color: darken($success-color, 25%);
+$caution-message-color: darken($caution-color, 20%);
+$alert-message-color: darken($alert-color, 25%);
