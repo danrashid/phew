@@ -1,1 +1,339 @@
-html/index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phew</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/accordion.js"></script>
+    <script type="text/javascript" src="js/disabled.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/tabs.js"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-2 medium-3 small-4">
+        <ul class="tabs">
+            <li><a href="#accordion">Accordion</a></li>
+            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#messages">Messages</a></li>
+            <li><a href="#modal">Modal</a></li>
+            <li><a href="#spinner">Spinner</a></li>
+            <li><a href="#inline-tabs">Inline tabs</a></li>
+            <li><a href="#tooltip">Tooltip</a></li>
+            <li><a href="#type">Type</a></li>
+        </ul>
+      </div>
+      <div class="col-10 medium-9 small-8">
+        <div id="accordion" class="tab-content">
+          <h1>Accordion</h1>
+          <dl class="accordion">
+            <dt><a href="#">The first fold</a></dt>
+            <dd>The content for the first fold.</dd>
+            <dt><a href="#">The second fold</a></dt>
+            <dd>The content for the second fold.</dd>
+            <dt><a href="#">The third fold</a></dt>
+            <dd>The content for the third fold.</dd>
+          </dl>
+        </div>
+        <div id="breadcrumbs" class="tab-content">
+          <h1>Breadcrumbs</h1>
+          <ul class="breadcrumbs">
+            <li><a href="#">Behold</a></li>
+            <li><a href="#">the</a></li>
+            <li><a href="#" class="active">Breadcrumbs</a></li>
+          </ul>
+        </div>
+        <div id="buttons" class="tab-content">
+          <h1>Buttons</h1>
+          <ul class="inline">
+            <li>
+              <button>Default</button>
+            </li>
+            <li>
+              <button class="secondary">Secondary</button>
+            </li>
+            <li>
+              <button class="success">Success</button>
+            </li>
+            <li>
+              <button class="caution">Caution</button>
+            </li>
+            <li>
+              <button class="alert">Alert</button>
+            </li>
+            <li>
+              <button class="disabled">Disabled</button>
+            </li>
+            <li>
+              <button class="loading">Loading</button>
+            </li>
+          </ul>
+          <h2>Link buttons</h2>
+          <ul class="inline">
+            <li><a href="#" class="button">Default</a></li>
+            <li><a href="#" class="secondary button">Secondary</a></li>
+            <li><a href="#" class="success button">Success</a></li>
+            <li><a href="#" class="caution button">Caution</a></li>
+            <li><a href="#" class="alert button">Alert</a></li>
+            <li><a href="#" class="disabled button">Disabled</a></li>
+            <li><a href="#" class="loading button">Loading</a></li>
+          </ul>
+          <h2>Menu buttons</h2>
+          <ul class="inline">
+            <li class="right">
+              <div class="right menu"><a href="#">Right</a>
+                <ul>
+                  <li><a href="#">First action</a></li>
+                  <li><a href="#">Second action</a></li>
+                  <li><a href="#">Third action</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="menu"><a href="#">Default</a>
+                <ul>
+                  <li><a href="#">First action</a></li>
+                  <li><a href="#">Second action</a></li>
+                  <li><a href="#">Third action</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <h2>Button group</h2>
+          <ul class="button-group">
+            <li><a href="#" class="button">Link button</a></li>
+            <li>
+              <button class="secondary">Secondary button</button>
+            </li>
+            <li><a href="#" class="secondary button">Secondary link button</a></li>
+          </ul>
+        </div>
+        <div id="form" class="tab-content">
+          <h1>Form</h1>
+          <div class="caution message">
+            Add <code>[novalidate]</code> to the form to bypass browser-native validation
+            and use this library instead.
+          </div>
+          <h2>Email address</h2>
+          <div class="message"><code>[data-match-id]</code> needs to match an <code>input[id]</code> for confirmation fields.</div>
+          <form novalidate>
+            <div class="row">
+              <div class="col-6">
+                <label>A required email address
+                  <div class="required">Required</div>
+                  <input id="email" type="email" required>
+                  <div class="error">Enter a valid email address</div>
+                </label>
+              </div>
+              <div class="col-6">
+                <label>Confirm email address
+                  <div class="required">Required</div>
+                  <input type="email" data-match-id="email">
+                  <div class="error">Email addresses don’t match</div>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit">Test email addresses</button>
+              </div>
+            </div>
+          </form>
+          <hr>
+          <h2>Select</h2>
+          <div class="message">Required selections should just default to the first option.</div>
+          <form novalidate>
+            <div class="row">
+              <div class="col-6">
+                <label>A required selection
+                  <div class="required">Required</div>
+                  <select>
+                    <option>foo</option>
+                    <option>bar</option>
+                    <option>baz</option>
+                  </select>
+                </label>
+              </div>
+              <div class="col-6">
+                <label>An optional selection
+                  <select>
+                    <option disabled selected>Select somthing if you want…</option>
+                    <option>foo</option>
+                    <option>bar</option>
+                    <option>baz</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </form>
+          <hr>
+          <h2>More types</h2>
+          <form novalidate>
+            <div class="row">
+              <div class="col-6">
+                <label>Some required text
+                  <div class="required">Required</div>
+                  <input type="text" required>
+                  <div class="error">Enter some text</div>
+                </label>
+              </div>
+              <div class="col-6">
+                <label>An optional loose numeric value
+                  <input type="numeric">
+                  <div class="error">Enter a numeric value</div>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit">Test these types</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="grid" class="tab-content">
+          <h1>Grid</h1>
+          <div class="message medium-hide small-hide">Using <strong>default</strong> size. Try resizing the window.</div>
+          <div class="message hide medium-show">Using <strong>medium</strong> size. Try resizing the window.</div>
+          <div class="message hide small-show">Using <strong>small</strong> size. Try resizing the window.</div>
+          <div class="row small-hide">
+            <div class="col-12"><code>.small-hide &gt; .col-12</code>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4"><code>.col-4</code></div>
+            <div class="col-4"><code>.col-4</code></div>
+            <div class="col-4"><code>.col-4</code></div>
+            <div class="col-12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 medium-6"><code>.col-3.medium-6</code></div>
+            <div class="col-3 medium-6"><code>.col-3.medium-6</code></div>
+            <div class="col-3 medium-6"><code>.col-3.medium-6</code></div>
+            <div class="col-3 medium-6"><code>.col-3.medium-6</code></div>
+            <div class="col-12">
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 small-12"><code>.col-4.small-12</code></div>
+            <div class="col-8 small-12"><code>.col-8.small-12</code></div>
+          </div>
+        </div>
+        <div id="inline-tabs" class="tab-content">
+          <h1>Inline tabs</h1>
+          <div class="message">
+            Same as default (vertical) tabs as used on the left,
+            but with <code>.inline</code> class added.
+          </div>
+          <ul class="tabs inline">
+              <li><a href="#accordion">Accordion</a></li>
+              <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+              <li><a href="#buttons">Buttons</a></li>
+              <li><a href="#form">Form</a></li>
+              <li><a href="#grid">Grid</a></li>
+              <li><a href="#messages">Messages</a></li>
+              <li><a href="#modal">Modal</a></li>
+              <li><a href="#spinner">Spinner</a></li>
+              <li><a href="#inline-tabs">Inline tabs</a></li>
+              <li><a href="#tooltip">Tooltip</a></li>
+              <li><a href="#type">Type</a></li>
+          </ul>
+        </div>
+        <div id="messages" class="tab-content">
+          <h1>Messages</h1>
+          <div class="message">This is the default message. <a href="#">Do something</a></div>
+          <div class="caution message">This is the caution message. <a href="#">Do something</a></div>
+          <div class="alert message">This is the alert message. <a href="#">Do something</a></div>
+          <div class="success message">This is the success message. <a href="#">Do something</a></div>
+        </div>
+        <div id="modal" class="tab-content">
+          <h1>Modal</h1>
+          <div class="message">
+            <code>a[data-modal-id]</code> and <code>.modal[id]</code> need to match.
+            It doesn’t matter where the elements are placed in the document.
+          </div>
+          <p><a href="#" data-modal-id="the-modal">Opens a modal</a></p>
+          <div id="the-modal" class="modal">
+            <h2 class="right"><a href="#" class="close">×</a></h2>
+            <h2>The modal title</h2>
+            <p>Are you sure you want to do something bad?</p>
+            <ul class="inline">
+              <li class="right"><a href="#" class="cancel">Cancel</a></li>
+              <li>
+                <button class="alert">Do it</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="spinner" class="tab-content">
+          <h1>Spinner</h1>
+          <div class="message">Simply remove the <code>.loading</code> class when AJAX is done.</div>
+          <h1 class="loading"></h1>
+        </div>
+        <div id="tooltip" class="tab-content">
+          <h1>Tooltip</h1>
+          <div class="message">
+            <code>a[data-tooltip-id]</code> and <code>.tooltip[id]</code> need to match.
+            It doesn’t matter where the elements are placed in the document.
+          </div>
+          <p><a href="#" data-tooltip-id="the-tooltip">Has a tooltip</a></p>
+          <div id="the-tooltip" class="tooltip">The text in here should be selectable (without closing the tooltip).</div>
+        </div>
+        <div id="type" class="tab-content">
+          <h1>Type</h1>
+          <div class="row">
+            <div class="col-4">
+              <h1>Headline 1</h1>
+              <h2>Headline 2</h2>
+              <h3>Headline 3</h3>
+              <h4>Headline 4</h4>
+              <h5>Headline 5</h5>
+              <h6>Headline 6</h6>
+              <p>Paragraph</p>
+              <p><code>Code</code></p>
+            </div>
+            <div class="col-4">
+              <ul>
+                <li>List item 1
+                  <ul>
+                    <li>List item 1a</li>
+                    <li>List item 1b</li>
+                    <li>List item 1c</li>
+                  </ul>
+                </li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <ol>
+                <li>List item 1
+                  <ol>
+                    <li>List item 1a</li>
+                    <li>List item 1b</li>
+                    <li>List item 1c</li>
+                  </ol>
+                </li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
