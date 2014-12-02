@@ -1,7 +1,18 @@
-.message <code>a[data-tooltip-id]</code> and <code>.tooltip[id]</code> need to match.
-  | It doesn’t matter where the elements are placed in the document.
+extends index
 
-p
-  a(href="#" data-tooltip-id="the-tooltip") Has a tooltip
+block title
+  title phew | tooltip
 
-.tooltip#the-tooltip The text in here should be selectable (without closing the tooltip).
+block scripts
+  script(type="text/javascript" src="js/tooltip.js")
+
+block content
+  h1 Tooltip
+
+  .message <code>a[data-tooltip-id]</code> and <code>.tooltip[id]</code> need to match.
+    | It doesn’t matter where the elements are placed in the document.
+
+  p
+    a(href="#" data-tooltip-id="the-tooltip") Has a tooltip
+
+  .tooltip#the-tooltip The text in here should be selectable (without closing the tooltip).

@@ -1,6 +1,6 @@
 @mixin grid($prefix) {
   @for $i from 1 through 12 {
-    .#{$prefix}-#{$i} {
+    .#{$prefix}#{$i} {
       width: percentage($i / 12);
     }
   }
@@ -31,15 +31,15 @@
   padding: 0 1rem;
 }
 
-@include grid(col);
+@include grid(col-);
 @include toggle;
 
-@media (max-width: 768px) {
-  @include grid(small);
-  @include toggle(small-);
+@media (max-width: 992px) and (min-width: 769px) {
+  @include grid(medium-);
+  @include toggle(medium-);
 }
 
-@media (min-width: 769px) and (max-width: 992px) {
-  @include grid(medium);
-  @include toggle(medium-);
+@media (max-width: 768px) {
+  @include grid(small-);
+  @include toggle(small-);
 }

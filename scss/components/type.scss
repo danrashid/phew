@@ -4,10 +4,6 @@ body {
   color: $color;
 }
 
-h1, h2, h3, h4, h5, h6, ul, ol, dl, p {
-  margin: 1em 0 0;
-}
-
 h1, h2, h3, h4, h5, h6, b, strong {
   font-weight: $bold-weight;
   color: $bold-color;
@@ -19,20 +15,6 @@ h1, h2, h3, h4, h5, h6 {
 
 ul, ol {
   padding-left: 1.5em;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  margin-top: 0;
-}
-
-hr {
-  background: $stroke-color;
-  border: none;
-  height: 1px;
-  margin: 2rem 0 1rem;
 }
 
 code {

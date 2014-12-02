@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>phew</title>
+    <title>phew | grid</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
@@ -29,6 +29,24 @@
         </nav>
       </div>
       <div class="col-10 medium-9 small-8">
+        <h1>Grid</h1>
+        <div class="message medium-hide small-hide">Using <strong>default</strong> size. Try resizing the window.</div>
+        <div class="message hide medium-show">Using <strong>medium</strong> size. Try resizing the window.</div>
+        <div class="message hide small-show">Using <strong>small</strong> size. Try resizing the window.</div>
+        <div class="row small-hide">
+          <div class="col-12"><code>.small-hide &gt; .col-12</code></div>
+        </div>
+        <div class="row">
+          <div class="col-4"><code>.col-4</code></div>
+          <div class="col-4"><code>.col-4</code></div>
+          <div class="col-4"><code>.col-4</code></div>
+        </div>
+        <div class="row">
+          <div class="col-3 medium-6 small-12"><code>.col-3.medium-6.small-12</code></div>
+          <div class="col-3 medium-6 small-12"><code>.col-3.medium-6.small-12</code></div>
+          <div class="col-3 medium-6 small-12"><code>.col-3.medium-6.small-12</code></div>
+          <div class="col-3 medium-6 small-12"><code>.col-3.medium-6.small-12</code></div>
+        </div>
       </div>
     </div>
   </body>

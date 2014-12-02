@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phew | form</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/tabs.js"></script>
+    <script type="text/javascript" src="js/disabled.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-2 medium-3 small-4">
+        <nav>
+          <ul>
+            <li><a href="accordion.html">Accordion</a></li>
+            <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
+            <li><a href="buttons.html">Buttons</a></li>
+            <li><a href="form.html">Form</a></li>
+            <li><a href="grid.html">Grid</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="modal.html">Modal</a></li>
+            <li><a href="spinner.html">Spinner</a></li>
+            <li><a href="tooltip.html">Tooltip</a></li>
+            <li><a href="type.html">Type</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-10 medium-9 small-8">
+        <h1>Form</h1>
+        <div class="caution message">
+          Add <code>[novalidate]</code> to the form to bypass browser-native validation
+          and use this library instead.
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <ul class="tabs">
+              <li><a href="#email-address">Email address</a></li>
+              <li><a href="#select">Select</a></li>
+              <li><a href="#more-types">More types</a></li>
+            </ul>
+          </div>
+          <div class="col-9">
+            <div id="email-address" class="tab-content">
+              <h2>Email address</h2>
+              <div class="message"><code>[data-match-id]</code> needs to match an <code>input[id]</code> for confirmation fields.</div>
+              <form novalidate>
+                <div class="row">
+                  <div class="col-6">
+                    <label>A required email address
+                      <div class="required">Required</div>
+                      <input id="email" type="email" required>
+                      <div class="error">Enter a valid email address</div>
+                    </label>
+                  </div>
+                  <div class="col-6">
+                    <label>Confirm email address
+                      <div class="required">Required</div>
+                      <input type="email" data-match-id="email">
+                      <div class="error">Email addresses don’t match</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <button type="submit">Test email addresses</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="select" class="tab-content">
+              <h2>Select</h2>
+              <div class="message">Required selections should just default to the first option.</div>
+              <form novalidate>
+                <div class="row">
+                  <div class="col-6">
+                    <label>A required selection
+                      <div class="required">Required</div>
+                      <select>
+                        <option>foo</option>
+                        <option>bar</option>
+                        <option>baz</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="col-6">
+                    <label>An optional selection
+                      <select>
+                        <option disabled selected>Select somthing if you want…</option>
+                        <option>foo</option>
+                        <option>bar</option>
+                        <option>baz</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="more-types" class="tab-content">
+              <h2>More types</h2>
+              <form novalidate>
+                <div class="row">
+                  <div class="col-6">
+                    <label>Some required text
+                      <div class="required">Required</div>
+                      <input type="text" required>
+                      <div class="error">Enter some text</div>
+                    </label>
+                  </div>
+                  <div class="col-6">
+                    <label>An optional loose numeric value
+                      <input type="numeric">
+                      <div class="error">Enter a numeric value</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <button type="submit">Test these types</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

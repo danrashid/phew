@@ -1,67 +1,54 @@
-ul.inline
-  li
-    button Default
-  li
-    button.secondary Secondary
-  li
-    button.success Success
-  li
-    button.caution Caution
-  li
-    button.alert Alert
-  li
-    button.disabled Disabled
-  li
-    button.loading Loading
+extends index
 
-h2 Link buttons
+block scripts
+  script(type="text/javascript" src="js/disabled.js")
 
-ul.inline
-  li
-    a(href="#").button Default
-  li
-    a(href="#").secondary.button Secondary
-  li
-    a(href="#").success.button Success
-  li
-    a(href="#").caution.button Caution
-  li
-    a(href="#").alert.button Alert
-  li
-    a(href="#").disabled.button Disabled
-  li
-    a(href="#").loading.button Loading
+block title
+  title phew | buttons
 
-h2 Menu buttons
+block content
+  h1 Buttons
 
-ul.inline
-  li.right
-    .right.menu
-      a(href="#") Right
-      ul
-        li
-          a(href="#") First action
-        li
-          a(href="#") Second action
-        li
-          a(href="#") Third action
-  li
-    .menu
-      a(href="#") Default
-      ul
-        li
-          a(href="#") First action
-        li
-          a(href="#") Second action
-        li
-          a(href="#") Third action
+  ul.inline
+    li
+      button Default
+    li
+      button.secondary Secondary
+    li
+      button.success Success
+    li
+      button.caution Caution
+    li
+      button.alert Alert
+    li
+      button.disabled Disabled
+    li
+      button.loading Loading
 
-h2 Button group
+  h2 Link buttons
 
-ul.button-group
-  li
-    a(href="#").button Link button
-  li
-    button.secondary Secondary button
-  li
-    a(href="#").secondary.button Secondary link button
+  ul.inline
+    li
+      a(href="#").button Default
+    li
+      a(href="#").secondary.button Secondary
+    li
+      a(href="#").success.button Success
+    li
+      a(href="#").caution.button Caution
+    li
+      a(href="#").alert.button Alert
+    li
+      a(href="#").disabled.button Disabled
+    li
+      a(href="#").loading.button Loading
+
+  h2 Button group
+
+  ul.button-group
+    li
+      a(href="#").button Link button
+    li
+      button.secondary Secondary button
+    li
+      a(href="#").secondary.button Secondary link button

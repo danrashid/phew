@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>phew</title>
+    <title>phew | tooltip</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="js/tabs.js"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
   </head>
   <body>
     <div class="row">
@@ -29,6 +30,13 @@
         </nav>
       </div>
       <div class="col-10 medium-9 small-8">
+        <h1>Tooltip</h1>
+        <div class="message">
+          <code>a[data-tooltip-id]</code> and <code>.tooltip[id]</code> need to match.
+          It doesn’t matter where the elements are placed in the document.
+        </div>
+        <p><a href="#" data-tooltip-id="the-tooltip">Has a tooltip</a></p>
+        <div id="the-tooltip" class="tooltip">The text in here should be selectable (without closing the tooltip).</div>
       </div>
     </div>
   </body>

@@ -25,13 +25,17 @@
     font-weight: bold;
     text-decoration: none;
 
+    &::before {
+      content: '×';
+    }
+
     &:hover {
       color: $secondary-hover-color;
     }
   }
 
   .cancel {
-    display: inline-block;
+    float: right;
     margin: .75rem 0 .75rem .75rem;
   }
 }

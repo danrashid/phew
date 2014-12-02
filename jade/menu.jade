@@ -1,0 +1,32 @@
+extends index
+
+block title
+  title phew | menu
+
+block scripts
+  script(type="text/javascript" src="js/menu.js")
+
+block content
+  h1 Menu
+
+  ul.inline
+    li.right
+      .right.menu
+        a(href="#") Right
+        ul
+          li
+            a(href="#") First action
+          li
+            a(href="#") Second action
+          li
+            a(href="#") Third action
+    li
+      .menu
+        a(href="#") Default
+        ul
+          li
+            a(href="#") First action
+          li
+            a(href="#") Second action
+          li
+            a(href="#") Third action

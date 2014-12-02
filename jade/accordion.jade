@@ -1,12 +1,23 @@
-dl.accordion
-  dt
-    a(href="#") The first fold
-  dd The content for the first fold.
+extends index
 
-  dt
-    a(href="#") The second fold
-  dd The content for the second fold.
+block title
+  title phew | accordion
 
-  dt
-    a(href="#") The third fold
-  dd The content for the third fold.
+block scripts
+  script(type="text/javascript" src="js/accordion.js")
+
+block content
+  h1 Accordion
+
+  dl.accordion
+    dt
+      a(href="#") The first fold
+    dd The content for the first fold.
+
+    dt
+      a(href="#") The second fold
+    dd The content for the second fold.
+
+    dt
+      a(href="#") The third fold
+    dd The content for the third fold.

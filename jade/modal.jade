@@ -1,18 +1,26 @@
-.message <code>a[data-modal-id]</code> and <code>.modal[id]</code> need to match.
-  | It doesn’t matter where the elements are placed in the document.
+extends index
 
-p
-  a(href="#" data-modal-id="the-modal") Opens a modal
+block title
+  title phew | modal
 
-.modal#the-modal
-  h2.right
-    a(href="#").close ×
-  h2 The modal title
+block scripts
+  script(type="text/javascript" src="js/modal.js")
 
-  p Are you sure you want to do something bad?
+block content
+  h1 Modal
 
-  ul.inline
-    li.right
-      a(href="#").cancel Cancel
-    li
-      button.alert Do it
+  .message <code>a[data-modal-id]</code> and <code>.modal[id]</code> need to match.
+    | It doesn’t matter where the elements are placed in the document.
+
+  p
+    a(href="#" data-modal-id="the-modal") Opens a modal
+
+  .modal#the-modal
+    h2
+      a(href="#").close
+      | The modal title
+
+    p Are you sure you want to do something bad?
+
+    a(href="#").cancel Cancel
+    button.alert Do it

@@ -1,57 +1,85 @@
-.caution.message Add <code>[novalidate]</code> to the form to bypass browser-native validation
-  | and use this library instead.
+extends index
 
-h2 Email address
-.message <code>[data-match-id]</code> needs to match an <code>input[id]</code> for confirmation fields.
-form(novalidate)
-  .row
-    .col-6
-      label A required email address
-        .required Required
-        input#email(type="email" required)
-        .error Enter a valid email address
-    .col-6
-      label Confirm email address
-        .required Required
-        input(type="email" data-match-id="email")
-        .error Email addresses don’t match
-  .row
-    .col-12
-      button(type="submit") Test email addresses
+block title
+  title phew | form
 
-hr
-h2 Select
-.message Required selections should just default to the first option.
-form(novalidate)
-  .row
-    .col-6
-      label A required selection
-        .required Required
-        select
-          option foo
-          option bar
-          option baz
-    .col-6
-      label An optional selection
-        select
-          option(disabled selected) Select somthing if you want…
-          option foo
-          option bar
-          option baz
+block scripts
+  script(type="text/javascript" src="js/disabled.js")
+  script(type="text/javascript" src="js/form.js")
 
-hr
-h2 More types
-form(novalidate)
+block content
+  h1 Form
+
+  .caution.message Add <code>[novalidate]</code> to the form to bypass browser-native validation
+    | and use this library instead.
+
   .row
-    .col-6
-      label Some required text
-        .required Required
-        input(type="text" required)
-        .error Enter some text
-    .col-6
-      label An optional loose numeric value
-        input(type="numeric")
-        .error Enter a numeric value
-  .row
-    .col-12
-      button(type="submit") Test these types
+    .col-3
+      ul.tabs
+        li
+          a(href="#email-address") Email address
+        li
+          a(href="#select") Select
+        li
+          a(href="#more-types") More types
+    .col-9
+      .tab-content#email-address
+        h2 Email address
+
+        .message <code>[data-match-id]</code> needs to match an <code>input[id]</code> for confirmation fields.
+
+        form(novalidate)
+          .row
+            .col-6
+              label A required email address
+                .required Required
+                input#email(type="email" required)
+                .error Enter a valid email address
+            .col-6
+              label Confirm email address
+                .required Required
+                input(type="email" data-match-id="email")
+                .error Email addresses don’t match
+          .row
+            .col-12
+              button(type="submit") Test email addresses
+
+      .tab-content#select
+        h2 Select
+
+        .message Required selections should just default to the first option.
+
+        form(novalidate)
+          .row
+            .col-6
+              label A required selection
+                .required Required
+                select
+                  option foo
+                  option bar
+                  option baz
+            .col-6
+              label An optional selection
+                select
+                  option(disabled selected) Select somthing if you want…
+                  option foo
+                  option bar
+                  option baz
+
+      .tab-content#more-types
+        h2 More types
+
+        form(novalidate)
+          .row
+            .col-6
+              label Some required text
+                .required Required
+                input(type="text" required)
+                .error Enter some text
+            .col-6
+              label An optional loose numeric value
+                input(type="numeric")
+                .error Enter a numeric value
+          .row
+            .col-12
+              button(type="submit") Test these types

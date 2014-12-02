@@ -1,36 +1,33 @@
-.message.medium-hide.small-hide Using <strong>default</strong> size. Try resizing the window.
-.message.hide.medium-show Using <strong>medium</strong> size. Try resizing the window.
-.message.hide.small-show Using <strong>small</strong> size. Try resizing the window.
+extends index
 
-.row.small-hide
-  .col-12
-    code .small-hide &gt; .col-12
-    hr
+block title
+  title phew | grid
 
-.row
-  .col-4
-    code .col-4
-  .col-4
-    code .col-4
-  .col-4
-    code .col-4
-  .col-12
-    hr
+block content
+  h1 Grid
 
-.row
-  .col-3.medium-6
-    code .col-3.medium-6
-  .col-3.medium-6
-    code .col-3.medium-6
-  .col-3.medium-6
-    code .col-3.medium-6
-  .col-3.medium-6
-    code .col-3.medium-6
-  .col-12
-    hr
+  .message.medium-hide.small-hide Using <strong>default</strong> size. Try resizing the window.
+  .message.hide.medium-show Using <strong>medium</strong> size. Try resizing the window.
+  .message.hide.small-show Using <strong>small</strong> size. Try resizing the window.
 
-.row
-  .col-4.small-12
-    code .col-4.small-12
-  .col-8.small-12
-    code .col-8.small-12
+  .row.small-hide
+    .col-12
+      code .small-hide &gt; .col-12
+
+  .row
+    .col-4
+      code .col-4
+    .col-4
+      code .col-4
+    .col-4
+      code .col-4
+
+  .row
+    .col-3.medium-6.small-12
+      code .col-3.medium-6.small-12
+    .col-3.medium-6.small-12
+      code .col-3.medium-6.small-12
+    .col-3.medium-6.small-12
+      code .col-3.medium-6.small-12
+    .col-3.medium-6.small-12
+      code .col-3.medium-6.small-12

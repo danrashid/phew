@@ -9,10 +9,7 @@
 
   dt {
     border-radius: $radius;
-
-    &:not(:first-child) {
-      margin-top: 1rem;
-    }
+    margin-top: 1rem;
 
     a {
       display: block;

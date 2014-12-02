@@ -1,7 +1,15 @@
-ul.breadcrumbs
-  li
-    a(href="#") Behold
-  li
-    a(href="#") the
-  li
-    a(href="#").active Breadcrumbs
+extends index
+
+block title
+  title phew | breadcrumbs
+
+block content
+  h1 Breadcrumbs
+
+  ul.breadcrumbs
+    li
+      a(href="#") Behold
+    li
+      a(href="#") the
+    li
+      a(href="#").active Breadcrumbs

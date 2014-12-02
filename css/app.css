@@ -10,9 +10,8 @@
 .accordion dt, .accordion dd {
   border: 1px solid Gainsboro; }
 .accordion dt {
-  border-radius: 0.125rem; }
-  .accordion dt:not(:first-child) {
-    margin-top: 1rem; }
+  border-radius: 0.125rem;
+  margin-top: 1rem; }
   .accordion dt a {
     display: block;
     text-decoration: none; }
@@ -34,14 +33,17 @@
   border-top: none;
   border-radius: 0 0 0.125rem 0.125rem; }
 
-.breadcrumbs li:not(:last-child) {
-  margin-right: .5em; }
-  .breadcrumbs li:not(:last-child)::after {
-    content: '▸';
-    color: Silver;
-    margin-left: .5em; }
-.breadcrumbs a {
-  text-decoration: none; }
+.breadcrumbs {
+  list-style: none;
+  padding: 0; }
+  .breadcrumbs li:not(:last-child) {
+    margin-right: .5em; }
+    .breadcrumbs li:not(:last-child)::after {
+      content: '▸';
+      color: Silver;
+      margin-left: .5em; }
+  .breadcrumbs a {
+    text-decoration: none; }
 
 button,
 .button,
@@ -219,6 +221,48 @@ select {
 .hide {
   display: none !important; }
 
+@media (max-width: 992px) and (min-width: 769px) {
+  .medium-1 {
+    width: 8.33333%; }
+
+  .medium-2 {
+    width: 16.66667%; }
+
+  .medium-3 {
+    width: 25%; }
+
+  .medium-4 {
+    width: 33.33333%; }
+
+  .medium-5 {
+    width: 41.66667%; }
+
+  .medium-6 {
+    width: 50%; }
+
+  .medium-7 {
+    width: 58.33333%; }
+
+  .medium-8 {
+    width: 66.66667%; }
+
+  .medium-9 {
+    width: 75%; }
+
+  .medium-10 {
+    width: 83.33333%; }
+
+  .medium-11 {
+    width: 91.66667%; }
+
+  .medium-12 {
+    width: 100%; }
+
+  .medium-show {
+    display: block !important; }
+
+  .medium-hide {
+    display: none !important; } }
 @media (max-width: 768px) {
   .small-1 {
     width: 8.33333%; }
@@ -261,48 +305,6 @@ select {
 
   .small-hide {
     display: none !important; } }
-@media (min-width: 769px) and (max-width: 992px) {
-  .medium-1 {
-    width: 8.33333%; }
-
-  .medium-2 {
-    width: 16.66667%; }
-
-  .medium-3 {
-    width: 25%; }
-
-  .medium-4 {
-    width: 33.33333%; }
-
-  .medium-5 {
-    width: 41.66667%; }
-
-  .medium-6 {
-    width: 50%; }
-
-  .medium-7 {
-    width: 58.33333%; }
-
-  .medium-8 {
-    width: 66.66667%; }
-
-  .medium-9 {
-    width: 75%; }
-
-  .medium-10 {
-    width: 83.33333%; }
-
-  .medium-11 {
-    width: 91.66667%; }
-
-  .medium-12 {
-    width: 100%; }
-
-  .medium-show {
-    display: block !important; }
-
-  .medium-hide {
-    display: none !important; } }
 .inline,
 .breadcrumbs,
 .button-group {
@@ -344,10 +346,10 @@ select {
   .menu.open ul {
     display: block; }
   .menu ul {
-    display: none;
-    position: absolute;
     list-style: none;
     padding: 0;
+    display: none;
+    position: absolute;
     background: White;
     border: 1px solid Gainsboro;
     border-radius: 0 0.125rem 0.125rem 0.125rem;
@@ -386,12 +388,12 @@ select {
     background: #fff3e5;
     border-color: DarkOrange; }
     .message.caution, .message.caution a {
-      color: #995400; }
+      color: #804600; }
   .message.alert {
     background: #fef1f4;
     border-color: Crimson; }
     .message.alert, .message.alert a {
-      color: #67091c; }
+      color: #7f0b22; }
 
 .modal,
 #modal-screen {
@@ -415,10 +417,12 @@ select {
     float: right;
     font-weight: bold;
     text-decoration: none; }
+    .modal .close::before {
+      content: '×'; }
     .modal .close:hover {
       color: #b6b6b6; }
   .modal .cancel {
-    display: inline-block;
+    float: right;
     margin: .75rem 0 .75rem .75rem; }
 
 html,
@@ -539,9 +543,6 @@ body {
   font: 1em/1.4em Sans-serif;
   color: #4d4d4d; }
 
-h1, h2, h3, h4, h5, h6, ul, ol, dl, p {
-  margin: 1em 0 0; }
-
 h1, h2, h3, h4, h5, h6, b, strong {
   font-weight: normal;
   color: Black; }
@@ -551,18 +552,6 @@ h1, h2, h3, h4, h5, h6 {
 
 ul, ol {
   padding-left: 1.5em; }
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  margin-top: 0; }
-
-hr {
-  background: Gainsboro;
-  border: none;
-  height: 1px;
-  margin: 2rem 0 1rem; }
 
 code {
   font-family: Menlo, Consolas, Monospace; }
