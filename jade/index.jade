@@ -11,15 +11,13 @@ html(lang="en")
     script(type="text/javascript" src="js/tabs.js")
     block scripts
 
-  mixin nav(active = '')
-    each component in ['accordion','breadcrumbs','buttons','form','grid','menu','messages','modal','spinner','tooltip','type']
-      li= component
-
   body
     .row
       .col-2.medium-3.small-4
         nav
           ul
+            li
+              a(href="index.html") Phew
             li
               a(href="accordion.html") Accordion
             li
@@ -45,3 +43,8 @@ html(lang="en")
 
       .col-10.medium-9.small-8
         block content
+          h1 Phew
+          ul
+            li Click links on the left to look at demos.
+            li <a href="form.html">Look at Form</a> to see default (vertical) tabs.
+            li <a href="type.html">Look at Type</a> to see horizontal (inline) tabs.

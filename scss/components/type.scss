@@ -20,3 +20,9 @@ ul, ol {
 code {
   font-family: Menlo, Consolas, Monospace;
 }
+
+a.active {
+  color: $color;
+  cursor: default;
+  text-decoration: none;
+}

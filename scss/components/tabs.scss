@@ -1,13 +1,12 @@
 .tabs {
-  list-style: none;
-  padding: 0;
+  padding-right: 0;
+  position: relative;
 
   a {
-    border: 1px solid transparent;
-    display: block;
+    border: $stroke;
+    border-color: transparent;
     padding: $padding;
     text-decoration: none;
-    transition: background .25s;
 
     &:not(.active):hover {
       background: $menu-hover-color;
@@ -16,38 +15,45 @@
 
   &:not(.inline) {
     border-right: $stroke;
+    margin-right: -1px;
+
+    + div {
+      border-left: $stroke;
+    }
 
     a {
+      display: block;
       border-radius: $radius 0 0 $radius;
+      margin-right: -1px;
+
+      &:hover {
+        border-right-color: $stroke-color;
+      }
 
       &.active {
         border-color: $stroke-color $bg $stroke-color $stroke-color;
-        margin-right: -1px;
       }
     }
   }
 
   &.inline {
     border-bottom: $stroke;
+    margin-bottom: -1px;
 
     a {
+      display: inline-block;
       border-radius: $radius $radius 0 0;
+      margin-bottom: -1px;
+
+      &:hover {
+        border-bottom-color: $stroke-color;
+      }
 
       &.active {
-        border-bottom-width: 2px;
         border-color: $stroke-color $stroke-color $bg $stroke-color;
-        margin-top: -1px;
-        position: relative;
-        top: 1px;
       }
     }
   }
-}
-
-a.active {
-  color: $color;
-  cursor: default;
-  text-decoration: none;
 }
 
 .tab-content {

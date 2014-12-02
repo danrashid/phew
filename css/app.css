@@ -473,38 +473,39 @@ button.loading, .button.loading {
     border-top-color: rgba(255, 255, 255, 0.375); }
 
 .tabs {
-  list-style: none;
-  padding: 0; }
+  padding-right: 0;
+  position: relative; }
   .tabs a {
-    border: 1px solid transparent;
-    display: block;
+    border: 1px solid Gainsboro;
+    border-color: transparent;
     padding: 0.5em 0.75em;
-    text-decoration: none;
-    transition: background .25s; }
+    text-decoration: none; }
     .tabs a:not(.active):hover {
       background: WhiteSmoke; }
   .tabs:not(.inline) {
-    border-right: 1px solid Gainsboro; }
+    border-right: 1px solid Gainsboro;
+    margin-right: -1px; }
+    .tabs:not(.inline) + div {
+      border-left: 1px solid Gainsboro; }
     .tabs:not(.inline) a {
-      border-radius: 0.125rem 0 0 0.125rem; }
+      display: block;
+      border-radius: 0.125rem 0 0 0.125rem;
+      margin-right: -1px; }
+      .tabs:not(.inline) a:hover {
+        border-right-color: Gainsboro; }
       .tabs:not(.inline) a.active {
-        border-color: Gainsboro White Gainsboro Gainsboro;
-        margin-right: -1px; }
+        border-color: Gainsboro White Gainsboro Gainsboro; }
   .tabs.inline {
-    border-bottom: 1px solid Gainsboro; }
+    border-bottom: 1px solid Gainsboro;
+    margin-bottom: -1px; }
     .tabs.inline a {
-      border-radius: 0.125rem 0.125rem 0 0; }
+      display: inline-block;
+      border-radius: 0.125rem 0.125rem 0 0;
+      margin-bottom: -1px; }
+      .tabs.inline a:hover {
+        border-bottom-color: Gainsboro; }
       .tabs.inline a.active {
-        border-bottom-width: 2px;
-        border-color: Gainsboro Gainsboro White Gainsboro;
-        margin-top: -1px;
-        position: relative;
-        top: 1px; }
-
-a.active {
-  color: #4d4d4d;
-  cursor: default;
-  text-decoration: none; }
+        border-color: Gainsboro Gainsboro White Gainsboro; }
 
 .tab-content {
   display: none; }
@@ -555,3 +556,8 @@ ul, ol {
 
 code {
   font-family: Menlo, Consolas, Monospace; }
+
+a.active {
+  color: #4d4d4d;
+  cursor: default;
+  text-decoration: none; }
