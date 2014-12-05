@@ -42,6 +42,14 @@
       allValid = allValid && isValid;
     });
 
+    $form.find('fieldset[required]').each(function () {
+      var $fieldset = $(this),
+        isValid = $fieldset.find(':checked').length > 0;
+
+      $fieldset.toggleClass('invalid', !isValid);
+      allValid = allValid && isValid;
+    });
+
     return allValid;
   });
 })();

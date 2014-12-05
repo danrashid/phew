@@ -27,40 +27,83 @@ block content
       .tab-content#checkboxes
         h2 Checkboxes
 
-        .message <code>[data-match-id]</code> needs to match an <code>input[id]</code> for confirmation fields.
+        .message Use <code>fieldset[required]</code> to require a selection.
 
         form(novalidate)
           .row
             .col-6
-              ul.listless
-                li Plain checkboxes
-                li
-                  label
-                    input(type="checkbox" name="plain-checkboxes")
-                    |  Foo
-                li
-                  label
-                    input(type="checkbox" name="plain-checkboxes")
-                    |  Bar
-                li
-                  label
-                    input(type="checkbox" name="plain-checkboxes")
-                    |  Baz
+              fieldset
+                legend Checkboxes
+                ul
+                  li
+                    label
+                      input(type="checkbox" name="checkboxes")
+                      |  Foo
+                  li
+                    label
+                      input(type="checkbox" name="checkboxes")
+                      |  Bar
+                  li
+                    label
+                      input(type="checkbox" name="checkboxes")
+                      |  Baz
+
             .col-6
-              ul.listless
-                li Switches
-                li
-                  label.switch
-                    input(type="checkbox" name="switches")
-                    |  Foo
-                li
-                  label.switch
-                    input(type="checkbox" name="switches")
-                    |  Bar
-                li
-                  label.switch
-                    input(type="checkbox" name="switches")
-                    |  Baz
+              fieldset(required)
+                legend Checkboxes
+                  .required Required
+                ul
+                  li
+                    label
+                      input(type="checkbox" name="required-checkboxes")
+                      |  Foo
+                  li
+                    label
+                      input(type="checkbox" name="required-checkboxes")
+                      |  Bar
+                  li
+                    label
+                      input(type="checkbox" name="required-checkboxes")
+                      |  Baz
+              .error Select at least one checkbox
+
+          .row
+            .col-6
+              fieldset
+                legend Switches
+                ul
+                  li
+                    label.switch
+                      input(type="checkbox" name="switches")
+                      |  Foo
+                  li
+                    label.switch
+                      input(type="checkbox" name="switches")
+                      |  Bar
+                  li
+                    label.switch
+                      input(type="checkbox" name="switches")
+                      |  Baz
+
+            .col-6
+              fieldset(required)
+                legend Switches
+                  .required Required
+                ul
+                  li
+                    label.switch
+                      input(type="checkbox" name="required-switches")
+                      |  Foo
+                  li
+                    label.switch
+                      input(type="checkbox" name="required-switches")
+                      |  Bar
+                  li
+                    label.switch
+                      input(type="checkbox" name="required-switches")
+                      |  Baz
+              .error Select at least one switch
+
           .row
             .col-12
               button(type="submit") Test checkboxes
@@ -112,21 +155,22 @@ block content
         form(novalidate)
           .row
             .col-12
-              ul.listless
-                li Radio star
+              fieldset
+                legend Radio
                   .required Required
-                li
-                  label
-                    input(type="radio" name="the-radio" checked)
-                    |  Foo
-                li
-                  label
-                    input(type="radio" name="the-radio")
-                    |  Bar
-                li
-                  label
-                    input(type="radio" name="the-radio")
-                    |  Baz
+                ul
+                  li
+                    label
+                      input(type="radio" name="the-radio" checked)
+                      |  Foo
+                  li
+                    label
+                      input(type="radio" name="the-radio")
+                      |  Bar
+                  li
+                    label
+                      input(type="radio" name="the-radio")
+                      |  Baz
 
       .tab-content#select
         h2 Select
