@@ -17,6 +17,11 @@ ul, ol {
   padding-left: 1.5em;
 }
 
+ul.listless {
+  list-style: none;
+  padding: 0;
+}
+
 code {
   font-family: Menlo, Consolas, Monospace;
 }

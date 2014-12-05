@@ -1,4 +1,4 @@
-input,
+input:not([type=checkbox]):not([type=radio]),
 select {
   border: $stroke;
   border-radius: $radius;
@@ -8,6 +8,12 @@ select {
   position: relative;
   width: 100%;
   z-index: 1;
+}
+
+label,
+input[type=checkbox],
+input[type=radio] {
+  cursor: pointer;
 }
 
 .required {

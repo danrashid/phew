@@ -133,7 +133,7 @@ button,
 .button-group li:last-child button, .button-group li:last-child .button {
   border-radius: 0 0.125rem 0.125rem 0; }
 
-input,
+input:not([type=checkbox]):not([type=radio]),
 select {
   border: 1px solid Gainsboro;
   border-radius: 0.125rem;
@@ -143,6 +143,11 @@ select {
   position: relative;
   width: 100%;
   z-index: 1; }
+
+label,
+input[type=checkbox],
+input[type=radio] {
+  cursor: pointer; }
 
 .required {
   color: Crimson;
@@ -472,6 +477,31 @@ button.loading, .button.loading {
   button.loading::before, .button.loading::before {
     border-top-color: rgba(255, 255, 255, 0.375); }
 
+.switch {
+  position: relative;
+  padding-left: 2em; }
+  .switch input {
+    position: absolute;
+    left: -9999em; }
+  .switch::before, .switch::after {
+    content: '';
+    height: 1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 1em; }
+  .switch::before {
+    background: Silver;
+    width: 1em;
+    z-index: 1;
+    transition: left .25s, background-color .25s; }
+  .switch::after {
+    background: WhiteSmoke;
+    width: 1.75em; }
+  .switch.checked::before {
+    background: CornflowerBlue;
+    left: .75em; }
+
 .tabs {
   padding-right: 0;
   position: relative; }
@@ -553,6 +583,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ul, ol {
   padding-left: 1.5em; }
+
+ul.listless {
+  list-style: none;
+  padding: 0; }
 
 code {
   font-family: Menlo, Consolas, Monospace; }

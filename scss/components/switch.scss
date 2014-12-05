@@ -1,0 +1,36 @@
+.switch {
+  position: relative;
+  padding-left: 2em;
+
+  input {
+    position: absolute;
+    left: -9999em;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    height: 1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 1em;
+  }
+
+  &::before {
+    background: $symbol-color;
+    width: 1em;
+    z-index: 1;
+    transition: left .25s, background-color .25s;
+  }
+
+  &::after {
+    background: $menu-hover-color;
+    width: 1.75em;
+  }
+
+  &.checked::before {
+    background: $primary-color;
+    left: .75em;
+  }
+}
