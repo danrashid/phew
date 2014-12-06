@@ -51,7 +51,7 @@ button,
   }
 
   &[disabled], &.disabled {
-    color: darken($disabled-color, 20%);
+    color: darken($disabled-color, 30%);
 
     &, &:hover {
       background: $disabled-color;
@@ -61,5 +61,9 @@ button,
   &.disabled,
   &.loading {
     cursor: default;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
